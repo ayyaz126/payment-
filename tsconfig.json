@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* Output & Module Settings */
+    "target": "ES2020",
+    "module": "CommonJS",                      
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Module & Import Behavior */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* Source Maps & Declarations */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Libraries & Types */
+    "lib": ["ES2020"],
+    "types": ["node", "jest"],
+
+    /* Performance */
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "shipments" ALTER COLUMN "user_id" SET DATA TYPE uuid;

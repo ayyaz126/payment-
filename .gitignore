@@ -1,0 +1,28 @@
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.production
+
+# --- Local data / backups ---
+text.txt
+text1.txt
+*.log
+*.bak
+*.tmp
+
+# --- Build outputs ---
+dist
+build
+coverage
+
+# --- Node modules ---
+node_modules
+
+# --- Docker (if local only) ---
+docker-compose.yml
+
+# --- OS / IDE junk files ---
+.DS_Store
+Thumbs.db
+.vscode
+.idea
