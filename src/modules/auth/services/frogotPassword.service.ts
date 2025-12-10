@@ -5,22 +5,16 @@ import { eq } from "drizzle-orm";
 import { sendEmail } from "../../../utils/email";
 import { redis } from "../../../config/redis";
 
-export async function forgotPasswordService(email: string): Promise<boolean> {
-  // 1️⃣ Check if user exists
+export async function forgotPasswordService(email: string): Promise<boolean> {  
   const existingUser = await db.select().from(users).where(eq(users.email, email));
   if (existingUser.length === 0) {
-    return false; // Don't reveal user existence
+    return false; 
   }
 
-  const user = existingUser[0]!;
-
-  // 2️⃣ Generate 6-digit OTP
+  const user = existingUser[0]!; 
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-  // 3️⃣ Store OTP in Redis (expires in 15 mins)
   await redis.set(`reset-otp:${email}`, otp, { EX: 60 * 15 });
 
-  // 4️⃣ Send OTP email
   const html = `
     <h2>Password Reset Request</h2>
     <p>Use the OTP below to reset your password:</p>
@@ -32,7 +26,7 @@ export async function forgotPasswordService(email: string): Promise<boolean> {
     await sendEmail(user.email, "Your Password Reset OTP", html);
     return true;
   } catch (err) {
-    console.error("❌ Failed to send reset OTP:", err);
+    console.error(" Failed to send reset OTP:", err);
     return false;
   }
 }

@@ -35,7 +35,7 @@ export const verifyPaymentHandler = async (req: Request, res: Response) => {
         },
       });
     } catch (error) {
-      console.error("❌ Verify Payment Error:", error); // 👈 Ye log dekhna zaroori hai
+      console.error(" Verify Payment Error:", error); 
       return res.status(500).json({
         success: false,
         message: "Failed to verify payment",

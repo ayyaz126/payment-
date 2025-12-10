@@ -13,7 +13,7 @@ import { errorHandler } from "./middlewares/error.middleware";
 const app = express();
 app.use(helmet());
 app.use(cors());
-// ✅ Stripe webhook ko express.json() se pehle mount karna hai
+
 import { stripeWebhookHandler } from "./modules/payments/controllers/stripeWebhook.controller";
 app.post(
   "/api/payments/webhook",

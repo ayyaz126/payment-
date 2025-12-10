@@ -4,7 +4,7 @@ import { getUserShipmentsService } from "../services/getusersShip.service";
 
 export const getUserShipmentsHandler = async (req: Request, res: Response) => {
   try {
-    // userId JWT se aa raha hai (auth.middleware se set hota hai)
+ 
     const userId = (req as any).user.id;
 
     const shipments = await getUserShipmentsService(userId);

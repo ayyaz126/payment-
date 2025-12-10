@@ -15,8 +15,6 @@ export function protect(
 ): void {
   try {
     const authHeader = req.headers.authorization;
-
-    // 👇 Step 1: Debug line — check header aa raha hai ya nahi
     console.log("🔹 Authorization Header:", authHeader);
 
     if (!authHeader) {
@@ -38,7 +36,7 @@ export function protect(
       return;
     }
 
-    console.log("✅ Decoded Token Payload:", decoded);
+    console.log("Decoded Token Payload:", decoded);
 
     (req as any).user = {
       id: decoded.userId,
@@ -47,7 +45,7 @@ export function protect(
 
     next();
   } catch (error: any) {
-    console.error("❌ Token verification error:", error.message);
+    console.error(" Token verification error:", error.message);
     res.status(401).json({ message: "Invalid or expired token" });
   }
 }

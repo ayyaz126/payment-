@@ -6,7 +6,6 @@ interface AuthenticatedRequest extends Request {
     role: string;
   };
 }
-
 export function authorizeRoles(roles: string[] = []) {
   return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     if (!req.user) {

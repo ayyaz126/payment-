@@ -5,7 +5,7 @@ import { ENV } from "./env";
 const pool = new Pool({
   connectionString: ENV.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // ✅ Neon ko SSL chahiye
+    rejectUnauthorized: false, 
   },
 });
 

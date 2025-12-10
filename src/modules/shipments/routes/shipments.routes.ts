@@ -3,8 +3,8 @@ import { createShipmentHandler } from "../controllers/createShipment.controller"
 import { trackShipmentHandler } from "../controllers/trackShipment.controller";
 import { updateShipmentStatusHandler } from "../controllers/updateStatus.controller";
 import { getUserShipmentsHandler } from "../controllers/ getUsersShip.controller";
-import { protect } from "../../../middlewares/auth.middleware"; // ✅ same as auth.routes.ts
-import { authorizeRoles } from "../../../middlewares/authorize.middleware"; // ✅
+import { protect } from "../../../middlewares/auth.middleware"; 
+import { authorizeRoles } from "../../../middlewares/authorize.middleware"; 
 
 const router = Router();
 

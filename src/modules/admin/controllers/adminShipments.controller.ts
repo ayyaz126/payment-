@@ -5,7 +5,7 @@ import {
   deleteShipmentService,
 } from "../services/ adminShipments.service";
 
-// 🔹 Get all shipments
+
 export const getAllShipmentsHandler = async (_req: Request, res: Response) => {
   try {
     const shipments = await getAllShipmentsService();
@@ -15,7 +15,7 @@ export const getAllShipmentsHandler = async (_req: Request, res: Response) => {
       shipments,
     });
   } catch (error: any) {
-    console.error("❌ Error fetching shipments:", error.message);
+    console.error(" Error fetching shipments:", error.message);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -48,7 +48,7 @@ export const updateShipmentStatusHandler = async (req: Request, res: Response) =
         shipment: updated,
       });
     } catch (error: any) {
-      console.error("❌ Error updating shipment status:", error.message);
+      console.error(" Error updating shipment status:", error.message);
       return res.status(500).json({ message: "Internal server error" });
     }
   };
@@ -72,7 +72,7 @@ export const updateShipmentStatusHandler = async (req: Request, res: Response) =
   
       return res.status(200).json({ message: "Shipment deleted successfully" });
     } catch (error: any) {
-      console.error("❌ Error deleting shipment:", error.message);
+      console.error(" Error deleting shipment:", error.message);
       return res.status(500).json({ message: "Internal server error" });
     }
   };

@@ -6,7 +6,7 @@ export const trackShipmentService = async (id: number) => {
   const [shipment] = await db
     .select()
     .from(shipments)
-    .where(eq(shipments.id, id)); // ✅ id ab number hai
+    .where(eq(shipments.id, id)); //
 
   return shipment;
 };

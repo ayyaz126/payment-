@@ -6,14 +6,14 @@ import { protect } from "../../../middlewares/auth.middleware";
 
 const router = Router();
 
-// ✅ Protected routes
+
 router.post("/create-payment", protect, createPaymentHandler);
 router.get("/verify-payment", protect, verifyPaymentHandler);
 
-// ✅ Webhook route (NO auth middleware here!)
+
 router.post(
   "/webhook",
-  express.raw({ type: "application/json" }), // ✅ ab error nahi aayega
+  express.raw({ type: "application/json" }),
   stripeWebhookHandler
 );
 

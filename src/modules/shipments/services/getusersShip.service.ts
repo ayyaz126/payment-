@@ -1,5 +1,3 @@
-// src/modules/shipments/services/getUserShipments.service.ts
-
 import { db } from "../../../config/db";
 import { shipments } from "../../../db/schema/shipments";
 import { eq } from "drizzle-orm";

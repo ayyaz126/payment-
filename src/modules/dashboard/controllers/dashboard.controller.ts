@@ -1,4 +1,3 @@
-// src/modules/dashboard/controllers/dashboard.controller.ts
 import { Request, Response } from "express";
 import { getDashboardStatsService } from "../services/dashboard.service";
 
@@ -11,7 +10,7 @@ export const getDashboardStatsHandler = async (_req: Request, res: Response) => 
       stats,
     });
   } catch (error: any) {
-    console.error("❌ Error fetching dashboard stats:", error.message);
+    console.error(" Error fetching dashboard stats:", error.message);
     res.status(500).json({ message: "Internal server error" });
   }
 };

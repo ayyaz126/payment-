@@ -8,7 +8,6 @@ export function errorHandler(
   _next: NextFunction
 ) {
   console.error(" Global Error Handler:", err);
-
   let statusCode = 500;
   let message = "Internal Server Error";
 

@@ -6,7 +6,6 @@ import { authorizeRoles } from "../../../middlewares/authorize.middleware";
 
 const router = Router();
 
-// 🔒 Only admin can access
 router.get("/stats", protect, authorizeRoles(["admin"]), getDashboardStatsHandler);
 
 export default router;

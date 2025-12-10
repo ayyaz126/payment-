@@ -1,4 +1,3 @@
-// src/modules/admin/controllers/adminUsers.controller.ts
 import { Request, Response } from "express";
 import { getAllUsersService } from "../services/adminUsers.service";
 
@@ -12,7 +11,7 @@ export const getAllUsersHandler = async (_req: Request, res: Response) => {
       users,
     });
   } catch (error: any) {
-    console.error("❌ Error fetching users:", error.message);
+    console.error(" Error fetching users:", error.message);
     res.status(500).json({ message: "Internal server error" });
   }
 };

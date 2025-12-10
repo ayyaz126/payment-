@@ -11,7 +11,7 @@ import {
 
 const router = Router();
 
-router.use(protect, authorizeRoles(["admin"])); // ✅ fixed both errors
+router.use(protect, authorizeRoles(["admin"])); 
 
 router.get("/users", getAllUsersHandler);
 router.get("/", getAllShipmentsHandler);

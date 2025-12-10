@@ -1,7 +1,7 @@
 import { db } from "../../../config/db";
 import { shipments } from "../../../db/schema/shipments";
 import { v4 as uuidv4 } from "uuid";
-import { redis } from "../../../config/redis"; // 👈 add this import
+import { redis } from "../../../config/redis";
 
 export const createShipmentService = async (
   userId: string,
@@ -25,7 +25,7 @@ export const createShipmentService = async (
     })
     .returning();
 
-  // 🧹 Clear dashboard cache after creating new shipment
+
   await redis.del("dashboard:stats");
 
   return shipment;
